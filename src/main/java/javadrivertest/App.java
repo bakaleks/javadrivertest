@@ -32,7 +32,6 @@ public class App
             int exceptionCounter = 0;
             for (int sequence = 1; sequence <= 1000; sequence++) {
                 try {
-                    session.execute("SELECT * FROM table1 WHERE epoch = " + epoch + " AND sequence = " + sequence + ";");
                     session.execute(QueryBuilder
                                    .select().all().from("table1")
                             .where(QueryBuilder.eq("epoch", epoch)).and(QueryBuilder.eq("sequence", sequence))
